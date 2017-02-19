@@ -1,3 +1,2 @@
 # CSC2300
-# CSC-Computer-Vision-
-# CSC-Computer-Vision-
+# Statistics for Computing (CSC2300) projects/homework assignemnts
