@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 //------------------------------------------------------------------
 // Francisco Rogel	    CSC2300       field.java 	February 19,2017
 //
@@ -9,13 +10,15 @@
 public class field 
 {
 	public static void main(String[] args)
-	{		
+	{			
+		DecimalFormat moneyFormat1 = new DecimalFormat("$000,000"); 
+		DecimalFormat moneyFormat2 = new DecimalFormat("$0.00000");
+
 		final int totalRolls = 1000000;
 		double averageMoneyWon = ((double)gameOfCraps(totalRolls)/(double)totalRolls);
 
-		System.out.println();
-		System.out.println("Net money won: " + gameOfCraps(totalRolls));
-		System.out.println("Average amount of money won: " + averageMoneyWon);
+		System.out.println("Net balance after " + totalRolls + ": " + moneyFormat1.format(gameOfCraps(totalRolls)));
+		System.out.println("Average amount of money lost per roll: " + moneyFormat2.format(averageMoneyWon));
 	}	
 
 	//----------------------------------------------------------------
@@ -73,3 +76,4 @@ public class field
 	}
 	//----------------------------------------------------------------
 }
+
