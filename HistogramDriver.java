@@ -3,11 +3,11 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
 //--------------------------------------------------------
-//	Francisco Rogel 	Sam Cacela		February 11, 2017
-// 	CSC 2300 									Dr. Joyce
+//	Francisco Rogel     Sam Cacela   February 11, 2017
+// 	CSC 2300 			         Dr. Joyce
 //
-//	Program that reads the file and creates a histogram based 
-//	on the FIRST DIGIT in each of the numbers. 
+//	Program that reads the file and creates a histogram 
+//      based on the FIRST DIGIT in each of the numbers. 
 //--------------------------------------------------------
 
 public class HistogramDriver 
