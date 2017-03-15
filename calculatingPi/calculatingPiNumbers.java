@@ -71,15 +71,14 @@ public class calculatingPiNumbers
 
 	}
 	
-	@SuppressWarnings("unused")
 	private static void monteCarloPi(int points)
 	{
-		Random rand = new Random(1);
+		Random rand = new Random();
 		double distance = 0;
 		
 		double totalPoints = points;
 
-		int decimal = 1000000;
+		int decimal = 1000000; // 1 million for a more accurate number
 		
 		double numIn = 0;
 		double numOut = 0;
@@ -89,22 +88,21 @@ public class calculatingPiNumbers
 			double x = rand.nextInt(decimal);
 			double y = rand.nextInt(decimal);
 			
-			//System.out.println(x/decimal);
-			//System.out.println(y/decimal);
-			
 			distance = Math.sqrt((Math.pow((1-(x/decimal)),2) + Math.pow((1-(y/decimal)),2))); 
-			//System.out.println("Distance: " + distance);
 
 			if (distance <= 1)
 				numIn++;
 			else
 				numOut++;
-		
 		}
-		System.out.println("Points in the circle: " + numIn);
-		System.out.println("Points not in the circle: " + numOut);
 		
-		System.out.println("Estimate of Pi: " + ((numIn/totalPoints)*4));
+		System.out.println("\n\nEstimation of pi using the monte Carlo method (Nothing to do with the applet)");
+		
+		System.out.println("\nRatio of points in the bullseye (entire circle): " + (numIn/TOTALPOINTS));
+		System.out.println("Points IN the circle: " + numIn + " out of " + TOTALPOINTS + " points" );
+		System.out.println("Points NOT in the circle: " + numOut + " out of " + TOTALPOINTS + " points");
+		
+		System.out.println("Estimate of Pi: " + ((numIn/totalPoints)*4) + " after " + TOTALPOINTS + " points generated");
 	}
 }
 
