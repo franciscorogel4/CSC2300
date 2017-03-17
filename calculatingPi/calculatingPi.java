@@ -17,7 +17,7 @@ public class calculatingPi extends JApplet
 	static final int WIDTH = 600; // circle
 	static final int HEIGHT = 600; // circle
 	
-	static final int totalPoints = 1000;
+	static final int totalPoints = 100;
 	
 	static int rowWidth = 100; // 2d array length 
 	static int colHeight = 2; // 2d array width
