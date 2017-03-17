@@ -1,17 +1,17 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class calculatingPiNumbers 
 {
-	static int TOTALPOINTS = 1000;
+	final static int TOTALPOINTS = 100;
 	final static int RADIUS = 300;
 
 	public static void main(String[] args) throws FileNotFoundException
-	{		
+	{	
+		// 3.14159265359 est. of pi	
 		double[] array = new double[TOTALPOINTS]; 
 
 		File file = new File("/Users/franciscorogel/Documents/CSC2300/bin/coordinates.txt");
@@ -28,9 +28,9 @@ public class calculatingPiNumbers
 		Arrays.sort(array);
 		printPoints(array);
 
-		System.out.println();
-		System.out.println("Estimation of pi using the monte Carlo method (Nothing to do with the applet)");
-		monteCarloPi(10000); // Number of points to generate
+		System.out.println();	
+		
+		monteCarloPi(TOTALPOINTS); // Number of points to generate
 	}
 
 	private static void printPoints(double[] array)
@@ -39,36 +39,33 @@ public class calculatingPiNumbers
 		double numOut = 0;
 		int count = 0;
 
-		DecimalFormat numberFormat = new DecimalFormat("###.##"); // Specific Format
-
 		System.out.println("Listing number of points IN the bullseye: \n");
 
 		for(int i = 0; i < array.length; i++)
 		{	
 			if (array[i] <= RADIUS){
-				System.out.println((i+1) + ": " + numberFormat.format(array[i]));
+				System.out.println((i+1) + ": " + (array[i]));
 				numIn++;
 			}
 			
 			else
-			{  //radius out side the bulseye
+			{  //radius out side the bullseye
 				count++;
 				
 				if (count == 1){
 					System.out.println("\nListing number of points NOT the bullseye: \n");
 				}
 				
-				System.out.println((i+1) + ": " + numberFormat.format(array[i]));
+				System.out.println((i+1) + ": " + (array[i]));
 				count++; // Making sure Line does not get printed more than once
 				numOut++;
 			}
 		}
 		double circleRatio = (numIn/TOTALPOINTS);
-		System.out.println("\n\nRatio of point in the bullseye (entire circle): " + circleRatio);
+		System.out.println("\n\nRatio of points in the bullseye (entire circle): " + circleRatio);
 		System.out.println("Number of points IN the circle: " + numIn + " out of " + TOTALPOINTS + " points");
 		System.out.println("Number of points NOT in the circle: " + numOut + " out of " + TOTALPOINTS + " points");
-		System.out.println("Estimation of Pi: " + (numIn*4/(numIn+numOut)));
-
+		System.out.println("Estimation of Pi: " + (numIn*4/(numIn+numOut)) + " after " + TOTALPOINTS + " trials");
 	}
 	
 	private static void monteCarloPi(int points)
@@ -105,4 +102,3 @@ public class calculatingPiNumbers
 		System.out.println("Estimate of Pi: " + ((numIn/totalPoints)*4) + " after " + TOTALPOINTS + " points generated");
 	}
 }
-
