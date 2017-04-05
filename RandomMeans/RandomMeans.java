@@ -1,8 +1,8 @@
 import java.util.Random;
 //------------------------------------------------------------
-//	Francisco Rogel        						     CSC 2300
+//	Francisco Rogel        			  CSC 2300
 //	
-//	RandomMeans.java							April 4, 2017
+//	RandomMeans.java		     April 4, 2017
 //------------------------------------------------------------
 public class RandomMeans 
 {
