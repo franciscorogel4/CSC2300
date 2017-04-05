@@ -1,0 +1,35 @@
+Random Means  40 points
+
+You may work in pairs (or even trios or more) but all students must 
+contribute "evenly" and understand all parts of the project.
+
+Part 1
+Write a program to do the following. Submit your code, sample output,
+and a discussion.
+
+A. Instantiate a histogram to hold integers in the range 1 to 20.
+   Use the posted Histogram class.
+
+B. Generate 3 random integers between 1 and 20. 
+
+C. Calculate the average of the numbers generated in part B. 
+
+D. Round the average to an int and submit it to the histogram.
+
+E. Repeat steps B, C, and D 10,000 times.
+
+F. Print the histogram. 
+ 
+
+Part 2
+Repeat part 1 except in step B generate 10 random numbers.
+
+
+Part 3
+Repeat part 2 except generate the random numners in such a way that
+there ia a 50% chance that a number between 1 and 5 inclusive 
+is generated, and a 50% chance that a number between 11 and 20
+inclusive is generated.
+
+
+End
